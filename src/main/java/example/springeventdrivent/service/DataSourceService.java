@@ -13,6 +13,8 @@ public class DataSourceService {
                 "sarah1",
                 new Random().nextDouble(100.00) // Random Amount
         );
-        return new Transaction(new Random().nextLong(), cashCard);
+        Transaction transaction = new Transaction(new Random().nextLong(), cashCard);
+        System.out.println("Generating Transaction: " + transaction);
+        return transaction;
     }
 }

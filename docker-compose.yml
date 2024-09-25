@@ -2,11 +2,13 @@ version: '2'
 services:
   zookeeper:
     image: wurstmeister/zookeeper:latest
+    container_name: zookeeper
     ports:
       - "2181:2181"
 
   kafka:
     image: wurstmeister/kafka:latest
+    container_name: kafka
     ports:
       - "9092:9092"
     environment:
@@ -15,3 +17,13 @@ services:
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
     depends_on:
       - zookeeper
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"  # RabbitMQ default port
+      - "15672:15672"  # Management UI port
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
