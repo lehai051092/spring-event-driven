@@ -1,1 +1,4 @@
 rootProject.name = 'spring-event-drivent'
+
+include 'cashcard-transaction-source'
+include 'cashcard-transaction-enricher'
