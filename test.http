@@ -1,0 +1,14 @@
+### POST request to example server
+POST http://localhost:8080/publish/txn
+Content-Type: application/json
+
+{
+  "id" : 100,
+  "cashCard" : {
+    "id" : 209,
+    "owner" : "kumar2",
+    "amountRequestedForAuth" : 200.0
+  }
+}
+
+###
